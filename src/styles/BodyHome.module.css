@@ -1,0 +1,93 @@
+.container{
+    width: 80%;
+    margin: auto;
+}
+.BodyHome{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding-top: 30px;
+    gap: 20px;
+}
+
+.box{
+    background-color: rgb(239, 238, 238);
+    border-radius: 3px;
+    height: 350px;
+    overflow-y: scroll;
+}
+.box::-webkit-scrollbar{
+    width: 8px;
+}
+.box::-webkit-scrollbar-thumb{
+    background-color: rgb(196, 196, 196);
+}
+.footerBox{
+    color: gray;
+    text-align: end;
+    margin-top: 5px;
+    font-size: 12px;
+}
+.listHeader, .listBody{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.listHeader{
+    color: grey;
+}
+.trPrimary{
+   width: 350px;
+}
+.trSegundary{
+  width: 130px;
+}
+.listFavotite{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.listFavotite div{
+    margin: auto;
+}
+.carregando{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+.BodyHomeLeft{
+    width: 100%;
+}
+.BodyHomeRight{
+    width: 100%;
+}
+.listavazia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+
+@media (max-width:800px) {
+    .container{
+        width: 97%;
+    }
+    .BodyHome{
+        grid-template-columns: 1fr;
+    }
+    .BodyHomeLeft{
+        width: 95vw;
+        margin: auto;
+        overflow-x: scroll;
+    }
+    .BodyHomeRight{
+        width: 95vw;
+        margin: auto;
+        overflow-x: scroll;
+    }
+    .listFavotite{
+        width: 90%;
+        overflow-x: scroll;
+    }
+}

@@ -1,0 +1,46 @@
+.container{
+    width: 80%;
+    margin: auto;
+  }
+  .qtd_produtos{
+    color: gray;
+  }
+  .appbar{
+    background-color: rgb(9, 9, 53);
+    color: white;
+    
+  }
+  .appbar_sup{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .appbbar_body{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .appbar_inf{
+     padding: 20px;
+     display: flex;
+     justify-content: space-between;
+  }
+  .btn{
+    cursor: pointer;
+    color: white;
+    margin-right: 4px;
+    background-color: red;
+    border-radius: 7px;
+    padding: 4px 8px;
+  }
+
+  .btnActive{
+    background-color: rgb(110, 41, 41);
+  }
+
+  @media (max-width:800px) {
+    .container{
+      width: 97%;
+    }
+  }
