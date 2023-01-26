@@ -9,6 +9,7 @@
 - Foi adicionado um campo `favoritos` na tabela para registrar se o produto é favorito e um campo `imagem` para adicionar uma foto. 
 
 - Na criação de um produto, no campo imagem, o usuário coloca uma URL de uma imagem da internet, poderia utilizar um serviço de upload de imagem na nuvem, mas fugiria do escopo do teste. 
+- Como as tecnologias utilizadas são livres, foram utilizadas as bibliotecas Material UI e Redux. 
 
 ## teste
 A ideia deste teste é avaliar suas capacidades de transformar design 
