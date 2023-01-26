@@ -42,9 +42,11 @@ export default function TabelaTotal() {
     var p = await total()
     if (campoDeBusca.listaDeProdutos.length > 0) {
       p = campoDeBusca.listaDeProdutos
+      setpaginaAtual(1)
     }
     if (campoDeBusca.listaDeProdutos.length === 0 && campoDeBusca.CampoInput !== "") {
       p = []
+      setpaginaAtual(1)
     }
     setLista(
       p.filter((e,key)=>{
@@ -53,6 +55,7 @@ export default function TabelaTotal() {
         }
       })
     )
+    
     setCarregando(false)
   }
 
