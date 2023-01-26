@@ -21,6 +21,8 @@
 .box::-webkit-scrollbar-thumb{
     background-color: rgb(196, 196, 196);
 }
+
+
 .footerBox{
     color: gray;
     text-align: end;
@@ -36,17 +38,22 @@
     color: grey;
 }
 .trPrimary{
-   width: 350px;
+   width: 370px;
 }
 .trSegundary{
-  width: 130px;
+  width: 100px;
+}
+.trTerciary{
+    width: 170px;
 }
 .listFavotite{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.listFavotite div{
-    margin: auto;
+
+.elementoListaFavoritos{
+    min-height: 150px;
+    margin: 10px;
 }
 .carregando{
     display: flex;
@@ -86,8 +93,15 @@
         margin: auto;
         overflow-x: scroll;
     }
-    .listFavotite{
-        width: 90%;
-        overflow-x: scroll;
+   
+   .listaTotal{
+    min-width: 900px;
+    overflow-x: scroll;
+   } 
+   .listaTotal::-webkit-scrollbar{
+    width: 8px;
+    }
+    .listaTotal::-webkit-scrollbar-thumb{
+        background-color: rgb(196, 196, 196);
     }
 }

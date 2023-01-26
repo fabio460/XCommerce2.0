@@ -86,8 +86,8 @@ export default function TabelaMaisVendidos() {
             {
               Lista?.map((prod, key)=>{
                 return(
-                  <div style={{paddingTop:10}} key={key}>
-                    <Card sx={{width:100,height:100, display:"flex",alignItems:"center"}}>
+                  <div className={styles.elementoListaFavoritos} key={key}>
+                    <Card sx={{width:"100%",height:120}}>
                       <img src={prod.image} style={{width:"100%"}}/>
                     </Card>
                     <div style={{margin:"10px 0px"}}>

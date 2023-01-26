@@ -138,59 +138,61 @@ export default function TabelaTotal() {
           </div>
         </div>
         <div className={styles.box}>
-          <div className={styles.listHeader}>
-            <div className={styles.trPrimary}>IDENTIFICAÇÃO</div>
-            <div className={styles.trSegundary}>PREÇOS</div>
-            <div className={styles.trSegundary}>VENDAS</div>
-            <div className={styles.trSegundary}>ESTOQUE</div>
-          </div>
-          <Divider sx={{margin:"0px 10px"}}/>
-          <Divider sx={{margin:"0px 10px"}}/>
-          {
-            carregando ? 
-            <div className={styles.carregando}><CircularProgress /></div>:
-            Lista.length === 0 ? 
-            <div className={styles.listavazia}>
-              Item não encontrado
-            </div>:
-            Lista?.map((prod, key)=>{
-              return(
-                <div className={styles.listBody} key={key}>
-                  <div className={styles.trPrimary}>
-                    <div style={{display:"flex"}}>
-                      <Card sx={{width:50,height:50, display:"flex",alignItems:"center", marginRight:2}}>
-                        <img src={prod.image} style={{width:"100%"}}/>
-                      </Card>
-                      <div style={{display:"flex",flexDirection:"column", justifyContent:"space-between"}}>
-                        <div style={{color:"blue"}}>{prod.name}</div>
-                        <div style={{color:"gray", fontSize:"12px"}}>{prod.code}</div>
+          <div className={styles.listaTotal}>
+            <div className={styles.listHeader}>
+              <div className={styles.trPrimary}>IDENTIFICAÇÃO</div>
+              <div className={styles.trSegundary}>PREÇOS</div>
+              <div className={styles.trTerciary}>VENDAS</div>
+              <div className={styles.trSegundary}>ESTOQUE</div>
+            </div>
+            <Divider sx={{margin:"0px 10px"}}/>
+            <Divider sx={{margin:"0px 10px"}}/>
+            {
+              carregando ? 
+              <div className={styles.carregando}><CircularProgress /></div>:
+              Lista.length === 0 ? 
+              <div className={styles.listavazia}>
+                Item não encontrado
+              </div>:
+              Lista?.map((prod, key)=>{
+                return(
+                  <div className={styles.listBody} key={key}>
+                    <div className={styles.trPrimary}>
+                      <div style={{display:"flex"}}>
+                        <Card sx={{width:50,height:50, display:"flex",alignItems:"center", marginRight:2}}>
+                          <img src={prod.image} style={{width:"100%"}}/>
+                        </Card>
+                        <div style={{display:"flex",flexDirection:"column", justifyContent:"space-between"}}>
+                          <div style={{color:"blue"}}>{prod.name}</div>
+                          <div style={{color:"gray", fontSize:"12px"}}>{prod.code}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={styles.trSegundary}>
-                    <div style={{color:"gray", fontSize:"12px"}}>R$ {formatarNumero(prod.price)}</div>
-                  </div>
-                  <div className={styles.trSegundary}>
-                    <div style={{color:"gray", fontSize:"12px"}}>
-                      <div>Total de R$ {formatarNumero(prod.sales * prod.price)}</div>
-                      <div>{prod.sales} vendas</div>
+                    <div className={styles.trSegundary}>
+                      <div style={{color:"gray", fontSize:"12px"}}>R$ {formatarNumero(prod.price)}</div>
                     </div>
-                  </div>
-                  <div className={styles.trSegundary}>
-                    <div style={{color:"gray", fontSize:"12px"}}>
-                      {prod.stock} und
+                    <div className={styles.trTerciary}>
+                      <div style={{color:"gray", fontSize:"12px"}}>
+                        <div>Total de R$ {formatarNumero(prod.sales * prod.price)}</div>
+                        <div>{prod.sales} vendas</div>
+                      </div>
                     </div>
+                    <div className={styles.trSegundary}>
+                      <div style={{color:"gray", fontSize:"12px"}}>
+                        {prod.stock} und
+                      </div>
+                    </div>
+                    <div className={styles.trSegundary}>
+                      <IconButton onClick={e=>setFavorito(prod.id)}>
+                        <Favorite color={prod.favorite ? 'error' : 'inherit'}/>
+                      </IconButton>
+                    </div>
+                    <Divider sx={{margin:"0px 10px"}}/>
                   </div>
-                  <div className={styles.trSegundary}>
-                    <IconButton onClick={e=>setFavorito(prod.id)}>
-                      <Favorite color={prod.favorite ? 'error' : 'inherit'}/>
-                    </IconButton>
-                  </div>
-                  <Divider sx={{margin:"0px 10px"}}/>
-                </div>
-              ) 
-            })
-          }
+                ) 
+              })
+            }
+          </div>
         </div>
         <div className={styles.footerBox}>Página {paginaAtual} de {TotalDePaginas}</div>
       </div>
