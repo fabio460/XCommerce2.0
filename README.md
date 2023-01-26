@@ -5,7 +5,8 @@
 #### Segundo as regras de negócio abaixo, foi utilizado somente o Next como techs obrigatória
 #### Alterações:
 
-Foi utilizado uma api (https://github.com/fabio460/api-Xcommerce) ao invés do miragejs ja que não é um fator obrigatório.
+- Foi utilizado uma api (https://github.com/fabio460/api-Xcommerce) ao invés do miragejs ja que não é um fator obrigatório.
+- A
 
 A ideia deste teste é avaliar suas capacidades de transformar design 
 em código, seu zelo com o projeto, e sua capacidade técnica.

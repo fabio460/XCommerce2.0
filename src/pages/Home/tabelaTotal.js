@@ -116,8 +116,6 @@ export default function TabelaTotal() {
   },[Lista])
   return (
     <div>
-      pagina = {paginaAtual.toString()} <br/>
-      tamanho da lista {Lista.length}
       <div className={styles.BodyHomeRight}>
         <div style={{display:"flex",justifyContent:"space-between", alignItems:"center"}}>
           <div>Todos os produtos</div>
