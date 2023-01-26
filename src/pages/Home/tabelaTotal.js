@@ -6,6 +6,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Favorite } from '@mui/icons-material';
 import { favoritarProduto, favoritos, total } from 'Api';
 import { useDispatch, useSelector } from 'react-redux';
+import { formatarNumero } from '../../../uteis';
 export default function TabelaTotal() {
 
   const [Lista, setLista] = useState([])  
@@ -114,8 +115,12 @@ export default function TabelaTotal() {
         setpaginaAtual(1)
       }
   },[Lista])
+
+
+
   return (
     <div>
+      
       <div className={styles.BodyHomeRight}>
         <div style={{display:"flex",justifyContent:"space-between", alignItems:"center"}}>
           <div>Todos os produtos</div>
@@ -163,11 +168,11 @@ export default function TabelaTotal() {
                     </div>
                   </div>
                   <div className={styles.trSegundary}>
-                    <div style={{color:"gray", fontSize:"12px"}}>R$ {(prod.price).toFixed(2)}</div>
+                    <div style={{color:"gray", fontSize:"12px"}}>R$ {formatarNumero(prod.price)}</div>
                   </div>
                   <div className={styles.trSegundary}>
                     <div style={{color:"gray", fontSize:"12px"}}>
-                      <div>Total de R$ {(prod.sales * prod.price).toFixed(2)}</div>
+                      <div>Total de R$ {formatarNumero(prod.sales * prod.price)}</div>
                       <div>{prod.sales} vendas</div>
                     </div>
                   </div>

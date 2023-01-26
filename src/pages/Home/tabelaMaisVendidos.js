@@ -5,6 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { maisVendidos } from 'Api';
 import { useSelector } from 'react-redux';
+import { formatarNumero } from '../../../uteis';
 
 export default function TabelaMaisVendidos() {
 
@@ -91,7 +92,7 @@ export default function TabelaMaisVendidos() {
                     </Card>
                     <div style={{margin:"10px 0px"}}>
                       <div style={{display:"flex", justifyContent:"space-between"}}>
-                        <div style={{fontSize:10, color:"gray"}}>R$ {(prod.price).toFixed(2)}</div>
+                        <div style={{fontSize:10, color:"gray"}}>R$ {formatarNumero(prod.price)}</div>
                         <div style={{fontSize:10, color:"gray"}}>{prod.sales} vendidos</div>
                       </div>
                       <div style={{color:'blue'}}>{prod.name}</div>
