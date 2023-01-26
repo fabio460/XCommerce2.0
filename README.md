@@ -6,8 +6,11 @@
 #### Alterações:
 
 - Foi utilizado uma api (https://github.com/fabio460/api-Xcommerce) ao invés do miragejs já que não é um fator obrigatório. 
-- A
+- Foi adicionado um campo `favoritos` na tabela para registrar se o produto é favorito e um campo `imagem` para adicionar uma foto. 
 
+- Na criação de um produto, no campo imagem, o usuário coloca uma URL de uma imagem da internet, poderia utilizar um serviço de upload de imagem na nuvem, mas fugiria do escopo do teste. 
+
+## teste
 A ideia deste teste é avaliar suas capacidades de transformar design 
 em código, seu zelo com o projeto, e sua capacidade técnica.
 Você deve realizar o teste com Next, todas outras techs são da sua 
