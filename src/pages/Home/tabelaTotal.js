@@ -42,11 +42,9 @@ export default function TabelaTotal() {
     var p = await total()
     if (campoDeBusca.listaDeProdutos.length > 0) {
       p = campoDeBusca.listaDeProdutos
-      setpaginaAtual(1)
     }
     if (campoDeBusca.listaDeProdutos.length === 0 && campoDeBusca.CampoInput !== "") {
       p = []
-      setpaginaAtual(1)
     }
     setLista(
       p.filter((e,key)=>{
@@ -111,12 +109,15 @@ export default function TabelaTotal() {
     }
   }, [atualizar,favoritosTo,paginaAtual,campoDeBusca])
 
-  // useEffect(()=>{
-  //     setpaginaAtual(1)
-  // },[favoritosTo,campoDeBusca])
+  useEffect(()=>{
+      if (Lista.length === 0) {
+        setpaginaAtual(1)
+      }
+  },[Lista])
   return (
     <div>
-      {favoritosTo.toString()}
+      pagina = {paginaAtual.toString()} <br/>
+      tamanho da lista {Lista.length}
       <div className={styles.BodyHomeRight}>
         <div style={{display:"flex",justifyContent:"space-between", alignItems:"center"}}>
           <div>Todos os produtos</div>
